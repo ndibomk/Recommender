@@ -5,7 +5,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from scipy.sparse import csr_matrix
 import pickle
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 # Load the processed data and similarity matrix from pickle files
 movies = pickle.load(open('movie_list.pkl', 'rb'))
@@ -32,7 +32,7 @@ def recommend_using_pickles(input_text, num_recommendations=10):
     
     return recommended_categories
 
-@app.route('/', methods=['POST'])
+@application.route('/', methods=['POST'])
 def recommend_endpoint():
     data = request.json
     input_text = data.get('input_text', '')
@@ -44,4 +44,4 @@ def recommend_endpoint():
     return jsonify(response)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    application.run(debug=True)
