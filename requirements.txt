@@ -1,6 +1,0 @@
-
-Flask
-Gunicorn
-pandas==1.2.3
-scikit-learn
-pickle4
