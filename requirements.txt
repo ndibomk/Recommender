@@ -1,0 +1,6 @@
+Flask
+Gunicorn
+pandas
+scikit-learn
+pickle4
+
